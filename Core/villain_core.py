@@ -1095,8 +1095,8 @@ class Hoaxshell(BaseHTTPRequestHandler):
 				Sessions_Manager.active_sessions[session_id]['Computername'] = url_split[1]
 				Sessions_Manager.active_sessions[session_id]['Username'] = url_split[2]
 			except:
-				Sessions_Manager.active_sessions[session_id]['Computername'] = 'User'
-				Sessions_Manager.active_sessions[session_id]['Username'] = 'Host'
+				Sessions_Manager.active_sessions[session_id]['Computername'] = 'Host'
+				Sessions_Manager.active_sessions[session_id]['Username'] = 'User'
 				print_to_prompt(f'\r[{WARN}] Failed to determin session\'s computername and username. (Default: User & Host)')
 
 			print_to_prompt(f'\r[{GREEN}Shell{END}] Backdoor session established on {ORANGE}{self.client_address[0]}{END}')
