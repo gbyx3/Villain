@@ -894,7 +894,7 @@ def main():
 							try:
 								shell_type = Sessions_Manager.active_sessions[session_id]['Shell']
 							except:
-								print(f'\r[{INFO}] Session: {session_id} is not recognised.')
+								print(f'\r[{INFO}] Session: {session_id} is not recognised. (Use the "sessions" command to list active sessions)')
 								Main_prompt.ready = True
 								continue
 							
