@@ -891,7 +891,12 @@ def main():
 							execution_object = cmd_list[1]
 							session_id = cmd_list[2]
 							is_file = False
-							shell_type = Sessions_Manager.active_sessions[session_id]['Shell']
+							try:
+								shell_type = Sessions_Manager.active_sessions[session_id]['Shell']
+							except:
+								print(f'\r[{INFO}] Session: {session_id} is not recognised. (Use the "sessions" command to list active sessions)')
+								Main_prompt.ready = True
+								continue
 							
 							if execution_object[0] in [os.sep, '~']:
 								
